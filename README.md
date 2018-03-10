@@ -1,2 +1,3 @@
-# python_backend_test
-Simple backend for projects
+# Django backend
+
+For now this is just simple backend example for internal project
