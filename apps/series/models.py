@@ -19,6 +19,9 @@ class Series(ImageRelationMixin,
     class Meta:
         verbose_name_plural = 'Series'
 
+    def __str__(self):
+        return f'<Series {self.id}: {self.title}>'
+
 
 class Episode(ImageRelationMixin,
               models.Model):
@@ -33,3 +36,6 @@ class Episode(ImageRelationMixin,
         max_length=255,
         verbose_name='Episode title',
     )
+
+    def __str__(self):
+        return f'<Episode if {self.series.title} {self.id}: {self.title}>'

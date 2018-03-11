@@ -11,4 +11,10 @@ router.register(
     base_name='series',
 )
 
+router.register(
+    'episodes',
+    views.EpisodeViewset,
+    base_name='episodes',
+)
+
 urlpatterns = router.urls

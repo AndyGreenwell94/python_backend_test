@@ -15,3 +15,10 @@ class SeriesViewset(mixins.RetrieveModelMixin,
         if self.action == 'list':
             return serializers.SeriesShortSerializer
         return super().get_serializer_class()
+
+
+class EpisodeViewset(mixins.RetrieveModelMixin,
+                     viewsets.GenericViewSet):
+
+    queryset = models.Episode.objects.all()
+    serializer_class = serializers.EpisodeSerializer
