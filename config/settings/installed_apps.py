@@ -3,6 +3,7 @@
 # Local apps
 LOCAL_APPS = (
     'apps.series',
+    'apps.users',
 )
 
 INSTALLED_APPS = (
