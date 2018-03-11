@@ -1,7 +1,10 @@
 from django.db import models
 
+from apps.gallery.mixins import ImageRelationMixin
 
-class Series(models.Model):
+
+class Series(ImageRelationMixin,
+             models.Model):
 
     title = models.CharField(
         max_length=255,
@@ -15,3 +18,18 @@ class Series(models.Model):
 
     class Meta:
         verbose_name_plural = 'Series'
+
+
+class Episode(ImageRelationMixin,
+              models.Model):
+
+    series = models.ForeignKey(
+        to=Series,
+        on_delete=models.CASCADE,
+        related_name='episodes',
+        verbose_name='Episodes Series',
+    )
+    title = models.CharField(
+        max_length=255,
+        verbose_name='Episode title',
+    )

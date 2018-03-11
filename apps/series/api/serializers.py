@@ -1,5 +1,7 @@
 from rest_framework import serializers
 
+from apps.gallery.api.serializers import ImageSerializer
+
 from .. import models
 
 
@@ -15,10 +17,13 @@ class SeriesShortSerializer(serializers.ModelSerializer):
 
 class SeriesSerializer(serializers.ModelSerializer):
 
+    images = ImageSerializer(many=True)
+
     class Meta:
-        models = models.Series
+        model = models.Series
         fields = (
             'id',
             'title',
             'description',
+            'images',
         )

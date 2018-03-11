@@ -4,6 +4,7 @@
 LOCAL_APPS = (
     'apps.series',
     'apps.users',
+    'apps.gallery',
 )
 
 INSTALLED_APPS = (
